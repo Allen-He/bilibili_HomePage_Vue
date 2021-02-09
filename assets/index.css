@@ -1,0 +1,277 @@
+#app {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+/* header区域 */
+.header {
+    width: 100vw;
+    height: 12vw;
+    padding: 0 3.2vw 0 4.8vw;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+.header .leftBox {
+    display: flex;
+    align-items: center;
+}
+.header .leftBox .search {
+    color: #ccc;
+}
+.header .leftBox .avator {
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 5vw;
+}
+.header .leftBox .download {
+    width: 19.2vw;
+    height: 6.4vw;
+    margin-left: 5vw;
+}
+.header .leftBox .download img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 导航区域 */
+.navBox {
+    width: 100vw;
+    height: 11vw;
+    position: fixed;
+    top: 12vw;
+    left: 0;
+    display: flex;
+    background-color: #fff;
+    z-index: 1;
+}
+.navBox .nav-bar {
+    width: 91vw;
+    white-space: nowrap;
+    overflow-x: scroll;
+    margin-top: 3vw;
+}
+/* 隐藏滚动条 */
+.navBox .nav-bar::-webkit-scrollbar {
+    display: none;
+}
+.navBox .nav-bar li {
+    display: inline-block;
+    height: 6vw;
+    font-size: 14px;
+    margin: 0 4vw;
+    color: #505050;
+    border-bottom: .5vw solid transparent;
+    transition: .15s;
+}
+.navBox .nav-bar li.active {
+    color: #fb7299;
+    border-bottom: .5vw solid #fb7299;
+}
+.navBox .down {
+    width: 9vw;
+    text-align: center;
+    padding-top: 1vw;
+}
+
+/* 隐藏导航区 */
+.navBoxHidden {
+    position: fixed;
+    /* top: 12vw; */
+    left: 0;
+    width: 100vw;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+    padding: 2.66667vw 5.33333vw 5.33333vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    top: -50vw;
+    transition: top ease-in-out .5s;
+    z-index: 2;
+}
+.navBoxHidden.show {
+    top: 12vw;
+}
+.navBoxHidden .nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+}
+.navBoxHidden .nav-bar li {
+    margin: 2.13333vw;
+    color: #757575;
+    font-size: 14px;
+}
+.navBoxHidden .nav-bar li.active {
+    color: #fb7299;
+}
+.navBoxHidden .up {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 轮播图 */
+.bannerBox {
+    width: 95vw;
+    height: 26.66667vw;
+    margin: 25vw auto 0;
+    overflow: hidden;
+    position: relative;
+}
+.bannerBox .bannerList {
+    width: calc(95vw * 4);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bannerBox .bannerList::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.bannerBox .bannerList li {
+    width: 95vw;
+    height: 100%;
+    float: left;
+    border-radius: 2vw;
+    overflow: hidden;
+}
+.bannerBox .bannerList li img {
+    width: 100%;
+    height: 100%;
+}
+.bannerBox .circleBox {
+    position: absolute;
+    bottom: 1vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bannerBox .circleBox span {
+    display: inline-block;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 .8vw;
+}
+.bannerBox .circleBox span.active {
+    background-color: #fb7299;
+}
+
+/* 视频区域 */
+.videoBox {
+    width: 97vw;
+    margin: 1vw auto 0;
+}
+.videoBox .videoList {
+    width: 100%;
+}
+.videoBox .videoList::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.videoBox .videoList li {
+    width: 50%;
+    padding: 1vw;
+    margin-bottom: 1vw;
+    box-sizing: border-box;
+    float: left;
+}
+.videoList li .preview {
+    width: 100%;
+    height: 25vw;
+    border-radius: 1vw;
+    overflow: hidden;
+    position: relative;
+}
+.videoList li .preview img {
+    width: 100%;
+    height: 100%;
+}
+.videoList li .preview .des {
+    width: 100%;
+    height: 8vw;
+    padding: 1.33333vw 1.6vw;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(0deg,rgba(0,0,0,.85),transparent);
+}
+.videoList li .preview .des span {
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.videoList li .preview .des svg {
+    fill: #fff;
+    display: flex;
+    align-items: center;
+    margin-right: 1.33333vw;
+}
+.videoList li .title {
+    margin-top: 1.6vw;
+    height: 10vw;
+    line-height: 5vw;
+    font-size: 12px;
+    color: #212121;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+/* footer区域 */
+.footer {
+    margin-top: 5vw;
+    color: #999;
+    background-color: #fff;
+}
+.footer .advise p {
+    font-size: 14px;
+    padding: 0 0 5.33333vw;
+    text-align: center;
+}
+.footer .info {
+    background-color: #f4f4f4;
+    padding: 3.2vw 1.33333vw;
+}
+.footer .info p {
+    font-size: 14px;
+    text-align: center;
+    line-height: 6.4vw;
+}
+
+/* 悬浮条区域 */
+.openApp {
+    margin: 0 auto;
+    width: 93.6vw;
+    line-height: 9.6vw;
+    border-radius: 6.66667vw;
+    background: #fb7299;
+    color: #fff;
+    text-align: center;
+    font-size: 3.73333vw;
+    box-shadow: 0 0.53333vw 2.66667vw rgb(0 0 0 / 20%);
+    position: fixed;
+    left: 3.2vw;
+    bottom: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.openApp span {
+    margin-left: 3vw;
+}
