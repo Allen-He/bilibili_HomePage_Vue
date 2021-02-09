@@ -161,7 +161,7 @@
             }
             this.curBannerIndex += 1;
             this.bannerStyle.left = -(this.bannerWidth * this.curBannerIndex) + 'vw';
-          }, 1500);
+          }, 2000);
         },
         transEndHandle() {
           if(this.curBannerIndex === 3) {
@@ -172,10 +172,11 @@
           this.autoMove();
         },
         scrollHandle(e) {
+          console.log(this.videoList.length);
           const {scrollHeight, offsetHeight, scrollTop} = this.$el;
           // console.log(scrollHeight, offsetHeight, scrollTop);
           const disToBottom = scrollHeight - offsetHeight - scrollTop;
-          if(disToBottom < 200 && this.continueGetVideo) {
+          if(disToBottom < 200 && this.continueGetVideo && this.videoList.length < this.videoCount) {
             this.continueGetVideo = false;
             axios.get('/video', {
               params: {

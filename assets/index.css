@@ -123,6 +123,8 @@
     margin: 25vw auto 0;
     overflow: hidden;
     position: relative;
+    border-radius: 2vw;
+    overflow: hidden;
 }
 .bannerBox .bannerList {
     width: calc(95vw * 4);
